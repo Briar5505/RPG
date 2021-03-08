@@ -1,0 +1,96 @@
+import time
+
+
+def printtext(sentence):
+    for char in sentence:
+        print(char, end='', flush=True)
+        time.sleep(.05)
+    print()
+
+
+printtext(
+    "You are an unnnamed warrior who has been brought back by the gods to fight the curse of hel, which has been corrupting the Valkyries, the ones who guide the honorable to Valhalla. Unfortunately the gods were unable to return you to their encampment,. and had to resurrect you in the nearest area, a dungeon that was once used by Valkyries to train."
+)
+
+list = ["Key"]
+inventory = []
+inventory.append("Key")
+key = "object"
+Shattered_sword = "object"
+Purple_moss = "object"
+
+running = True
+while running:
+    direction = input("Which direction do you travel? N S E W >>")
+    if direction == "N":
+        printtext(
+            "You found a key. It appears to have odd etchings across it.")
+        inventory += key
+    if direction == "W":
+        printtext("You see nothing but a wall...")
+    if direction == "S":
+        printtext("There's nothing but a mossy wall with several cracks.")
+    if direction == "E":
+        #Ints
+        import random
+        player_health = (12)
+        enemy_health = (12)
+        int(enemy_health)
+        int(player_health)
+
+        #Loop start
+        while True:
+            print("A battle ensues...")
+
+            #Player attack
+            player_attack = random.randint(3, 4)
+            #if "Shattered sword" in inventory:
+            #player_attack += ()
+            enemy_health -= player_attack
+            if player_health <= 0:
+                printtext("You have been defeated...")
+                break
+
+            #Enemy attack
+            enemy_attack = random.randint(3, 6)
+            player_health -= enemy_attack
+            if enemy_health <= 0:
+                printtext("The Corrupted Valkyrie flees to it's corruptor!")
+                break
+
+            #Combat stats
+            printtext(("Corrupted Valkyrie attacked for ", enemy_attack,
+                       "    "))
+            printtext(("player attacked for ", player_attack, "    "))
+            printtext(("You're health is at ", player_health, "    "))
+            printtext(("The Corrupted Valkyrie is at ", enemy_health, "    "))
+
+            #Loop end
+            #running = False
+        running = False
+
+printtext(
+    "As you enter the next room you notice that the floor seems to be slightly flooded. And out of the corner of your eye you see a glint."
+)
+
+running = True
+while running:
+    direction = input("Which direction do you travel next? N S E W >>")
+    if direction == "N":
+        printtext(
+            "You see a large hole in the wall, but you know you will never be able to reach it."
+        )
+    if direction == "E":
+        print(
+            "You see a large silver chest in the corner of the room. You decide to approach it, and you notice etchings similar to the key you discovered earlier. You decide to open the chest, and as you open the chest you see a small glimpse of teeth..."
+        )
+        printtext("You were devoured by a mimic...")
+        break
+    if direction == "S":
+        printtext(
+            "You see a large door at the end of a hallway, it shines brighter than you can handle. You decide to run towards th exit, shielding your eyes from the blinding light."
+        )
+        printtext("You escaped to the outer world!")
+        break
+    if direction == "W":
+        printtext("There is no point in returning.")
